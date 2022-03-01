@@ -4,7 +4,7 @@ require_once 'inc/functions.php';
 
 $input = json_decode(file_get_contents('php://input'));
 $id = filter_var($input->id, FILTER_SANITIZE_NUMBER_INT);
-$description = filter_var($input->description, FILTER_SANITIZE_STRING);
+$description = filter_var($input->description, FILTER_UNSAFE_RAW);
 
 try {
     $db = openDB();

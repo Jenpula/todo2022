@@ -6,7 +6,8 @@ function openDB() {
 }
 
 function returnError(PDOException $pdoex) {
-    header('HTTP/1.1 500 Internal Server Error');
+   header('HTTP/1.1 500 Internal Server Error');
   $error = array('error' => $pdoex->getMessage());
-  print json_encode($error);
+   json_encode($error);
+  
 }
