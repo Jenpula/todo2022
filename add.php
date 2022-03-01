@@ -1,6 +1,6 @@
 <?php
-require_once 'inc/headers.php'
-require_once 'inc/functions.php'
+require_once 'inc/headers.php';
+require_once 'inc/functions.php;';
 
 $input = json_decode(file_get_contents('php://input'));
 $description = filter_var($input->description,FILTER_SANITIZE_SPECIAL_CHARS);

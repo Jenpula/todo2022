@@ -1,6 +1,7 @@
 <?php
-require_once 'inc/headers.php'
-require_once 'inc/functions.php'
+require_once 'inc/headers.php';
+require_once 'inc/functions.php';
+
 try {
     $db = openDB();
   $sql = "select * from task";
@@ -10,4 +11,6 @@ try {
   print json_encode($results);
 } catch (PDOException $pdoex) {
   returnError($pdoex);
+  $error = array('error' => $pdoex->getMessage());
+  print json_encode($error);
 }
